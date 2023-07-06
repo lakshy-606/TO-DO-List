@@ -4,6 +4,7 @@ const bodyparser = require("body-parser");
 const Date = require(__dirname+"/date.js");
 const mongoose = require("mongoose");
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.set("view engine","ejs");
 app.use(bodyparser.urlencoded({extended:true}));
@@ -121,7 +122,7 @@ app.get("/:newRoute",function(req,res){
 app.get("/about",function(req,res){
     res.render("about");
 })
-app.listen(3000, function(){
+app.listen(PORT, function(){
     console.log("server running at port 3000");
 })
 
